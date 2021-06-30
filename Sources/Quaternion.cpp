@@ -8,18 +8,18 @@
 Quaternion::Quaternion (const  glm::vec3 &RotationAxis,
                        const float &RotationAngle ) {
                        
-float x = RotationAxis->x * sin(RotationAngle / 2)
-float y = RotationAxis->y * sin(RotationAngle / 2)
-float z = RotationAxis->z * sin(RotationAngle / 2)
-float w = cos(RotationAngle / 2)
+float x = RotationAxis.x * sin(RotationAngle / 2);
+float y = RotationAxis.y * sin(RotationAngle / 2);
+float z = RotationAxis.z * sin(RotationAngle / 2);
+float w = cos(RotationAngle / 2);
 };
 
 //Addition de Quaternion
 void Quaternion::operator+(const Quaternion *quat) {
-this.x+= quat->x;
-this.y+= quat->y;
-this.z+= quat->z;
-this.w+= quat->w;
+this->x+= quat->x;
+this->y+= quat->y;
+this->z+= quat->z;
+this->w+= quat->w;
 }
 
 void Quaternion::normalization() {          //normaliser
@@ -27,10 +27,10 @@ void Quaternion::normalization() {          //normaliser
 float mag2 = w * w + x * x + y * y + z * z; 
 if (fabs(mag2 - 1.0f) > 0.00001f)  // fabs pour avoir valeur absolue , 0.00001f est la tolérence 
 { float mag = sqrt(mag2); //pour racine carré de mag2
-this.w /= mag; this.x /= mag; this.y /= mag; this.z /= mag; } }
+this->w /= mag; this->x /= mag; this->y /= mag; this->z /= mag; } }
 
 Quaternion Conjugation() {  //conjugaison
- return Quaternion(-this.x, -this.y, -this.z, this.w); 
+ return Quaternion(-this->x, -this->y, -this->z, this->w); 
  }
  
  Quaternion operator* (const Quaternion *rq) const {  //Multiplication
@@ -67,7 +67,7 @@ Quaternion Conjugation() {  //conjugaison
 //Produit squalaire
 float produitsqualaire(const glm::mat4 *mat) {
 Quaternion sq = MatrixtaQuaternion(mat); 
-return (this.x * sq.x + this.y * sq.y + this.z * sq.z + this.w * sq.w);
+return (this->x * sq->x + this->y * sq->y + this->z * sq->z + this->w * sq->w);
 }
 
 //Matrix to a Quaternion
