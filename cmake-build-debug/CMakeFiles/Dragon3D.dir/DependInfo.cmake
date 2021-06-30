@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/berthelot Mickael/Desktop/opengl projets/Dragon3DTexture/Dragon3DLight.cpp" "C:/Users/berthelot Mickael/Desktop/opengl projets/Dragon3DTexture/cmake-build-debug/CMakeFiles/Dragon3D.dir/Dragon3DLight.cpp.obj"
-  "C:/Users/berthelot Mickael/Desktop/opengl projets/Dragon3DTexture/Sources/Camera.cpp" "C:/Users/berthelot Mickael/Desktop/opengl projets/Dragon3DTexture/cmake-build-debug/CMakeFiles/Dragon3D.dir/Sources/Camera.cpp.obj"
-  "C:/Users/berthelot Mickael/Desktop/opengl projets/Dragon3DTexture/Sources/ObjLoader.cpp" "C:/Users/berthelot Mickael/Desktop/opengl projets/Dragon3DTexture/cmake-build-debug/CMakeFiles/Dragon3D.dir/Sources/ObjLoader.cpp.obj"
-  "C:/Users/berthelot Mickael/Desktop/opengl projets/Dragon3DTexture/Sources/Quaternion.cpp" "C:/Users/berthelot Mickael/Desktop/opengl projets/Dragon3DTexture/cmake-build-debug/CMakeFiles/Dragon3D.dir/Sources/Quaternion.cpp.obj"
+  "C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/Dragon3DLight.cpp" "C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/cmake-build-debug/CMakeFiles/Dragon3D.dir/Dragon3DLight.cpp.obj"
+  "C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/Sources/Camera.cpp" "C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/cmake-build-debug/CMakeFiles/Dragon3D.dir/Sources/Camera.cpp.obj"
+  "C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/Sources/ObjLoader.cpp" "C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/cmake-build-debug/CMakeFiles/Dragon3D.dir/Sources/ObjLoader.cpp.obj"
+  "C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/Sources/Quaternion.cpp" "C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/cmake-build-debug/CMakeFiles/Dragon3D.dir/Sources/Quaternion.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

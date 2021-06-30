@@ -62,10 +62,10 @@ RM = "C:\Users\berthelot Mickael\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture"
+CMAKE_SOURCE_DIR = "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Dragon3D.dir/depend.make
@@ -79,58 +79,58 @@ include CMakeFiles/Dragon3D.dir/flags.make
 CMakeFiles/Dragon3D.dir/Dragon3DLight.cpp.obj: CMakeFiles/Dragon3D.dir/flags.make
 CMakeFiles/Dragon3D.dir/Dragon3DLight.cpp.obj: CMakeFiles/Dragon3D.dir/includes_CXX.rsp
 CMakeFiles/Dragon3D.dir/Dragon3DLight.cpp.obj: ../Dragon3DLight.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Dragon3D.dir/Dragon3DLight.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Dragon3D.dir\Dragon3DLight.cpp.obj -c "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\Dragon3DLight.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Dragon3D.dir/Dragon3DLight.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Dragon3D.dir\Dragon3DLight.cpp.obj -c "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\Dragon3DLight.cpp"
 
 CMakeFiles/Dragon3D.dir/Dragon3DLight.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Dragon3D.dir/Dragon3DLight.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\Dragon3DLight.cpp" > CMakeFiles\Dragon3D.dir\Dragon3DLight.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\Dragon3DLight.cpp" > CMakeFiles\Dragon3D.dir\Dragon3DLight.cpp.i
 
 CMakeFiles/Dragon3D.dir/Dragon3DLight.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Dragon3D.dir/Dragon3DLight.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\Dragon3DLight.cpp" -o CMakeFiles\Dragon3D.dir\Dragon3DLight.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\Dragon3DLight.cpp" -o CMakeFiles\Dragon3D.dir\Dragon3DLight.cpp.s
 
 CMakeFiles/Dragon3D.dir/Sources/Camera.cpp.obj: CMakeFiles/Dragon3D.dir/flags.make
 CMakeFiles/Dragon3D.dir/Sources/Camera.cpp.obj: CMakeFiles/Dragon3D.dir/includes_CXX.rsp
 CMakeFiles/Dragon3D.dir/Sources/Camera.cpp.obj: ../Sources/Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Dragon3D.dir/Sources/Camera.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Dragon3D.dir\Sources\Camera.cpp.obj -c "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\Sources\Camera.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Dragon3D.dir/Sources/Camera.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Dragon3D.dir\Sources\Camera.cpp.obj -c "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\Sources\Camera.cpp"
 
 CMakeFiles/Dragon3D.dir/Sources/Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Dragon3D.dir/Sources/Camera.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\Sources\Camera.cpp" > CMakeFiles\Dragon3D.dir\Sources\Camera.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\Sources\Camera.cpp" > CMakeFiles\Dragon3D.dir\Sources\Camera.cpp.i
 
 CMakeFiles/Dragon3D.dir/Sources/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Dragon3D.dir/Sources/Camera.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\Sources\Camera.cpp" -o CMakeFiles\Dragon3D.dir\Sources\Camera.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\Sources\Camera.cpp" -o CMakeFiles\Dragon3D.dir\Sources\Camera.cpp.s
 
 CMakeFiles/Dragon3D.dir/Sources/Quaternion.cpp.obj: CMakeFiles/Dragon3D.dir/flags.make
 CMakeFiles/Dragon3D.dir/Sources/Quaternion.cpp.obj: CMakeFiles/Dragon3D.dir/includes_CXX.rsp
 CMakeFiles/Dragon3D.dir/Sources/Quaternion.cpp.obj: ../Sources/Quaternion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Dragon3D.dir/Sources/Quaternion.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Dragon3D.dir\Sources\Quaternion.cpp.obj -c "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\Sources\Quaternion.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Dragon3D.dir/Sources/Quaternion.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Dragon3D.dir\Sources\Quaternion.cpp.obj -c "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\Sources\Quaternion.cpp"
 
 CMakeFiles/Dragon3D.dir/Sources/Quaternion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Dragon3D.dir/Sources/Quaternion.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\Sources\Quaternion.cpp" > CMakeFiles\Dragon3D.dir\Sources\Quaternion.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\Sources\Quaternion.cpp" > CMakeFiles\Dragon3D.dir\Sources\Quaternion.cpp.i
 
 CMakeFiles/Dragon3D.dir/Sources/Quaternion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Dragon3D.dir/Sources/Quaternion.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\Sources\Quaternion.cpp" -o CMakeFiles\Dragon3D.dir\Sources\Quaternion.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\Sources\Quaternion.cpp" -o CMakeFiles\Dragon3D.dir\Sources\Quaternion.cpp.s
 
 CMakeFiles/Dragon3D.dir/Sources/ObjLoader.cpp.obj: CMakeFiles/Dragon3D.dir/flags.make
 CMakeFiles/Dragon3D.dir/Sources/ObjLoader.cpp.obj: CMakeFiles/Dragon3D.dir/includes_CXX.rsp
 CMakeFiles/Dragon3D.dir/Sources/ObjLoader.cpp.obj: ../Sources/ObjLoader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Dragon3D.dir/Sources/ObjLoader.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Dragon3D.dir\Sources\ObjLoader.cpp.obj -c "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\Sources\ObjLoader.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Dragon3D.dir/Sources/ObjLoader.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Dragon3D.dir\Sources\ObjLoader.cpp.obj -c "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\Sources\ObjLoader.cpp"
 
 CMakeFiles/Dragon3D.dir/Sources/ObjLoader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Dragon3D.dir/Sources/ObjLoader.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\Sources\ObjLoader.cpp" > CMakeFiles\Dragon3D.dir\Sources\ObjLoader.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\Sources\ObjLoader.cpp" > CMakeFiles\Dragon3D.dir\Sources\ObjLoader.cpp.i
 
 CMakeFiles/Dragon3D.dir/Sources/ObjLoader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Dragon3D.dir/Sources/ObjLoader.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\Sources\ObjLoader.cpp" -o CMakeFiles\Dragon3D.dir\Sources\ObjLoader.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\Sources\ObjLoader.cpp" -o CMakeFiles\Dragon3D.dir\Sources\ObjLoader.cpp.s
 
 # Object files for target Dragon3D
 Dragon3D_OBJECTS = \
@@ -150,7 +150,7 @@ Dragon3D.exe: CMakeFiles/Dragon3D.dir/build.make
 Dragon3D.exe: CMakeFiles/Dragon3D.dir/linklibs.rsp
 Dragon3D.exe: CMakeFiles/Dragon3D.dir/objects1.rsp
 Dragon3D.exe: CMakeFiles/Dragon3D.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Dragon3D.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Dragon3D.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Dragon3D.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -163,6 +163,6 @@ CMakeFiles/Dragon3D.dir/clean:
 .PHONY : CMakeFiles/Dragon3D.dir/clean
 
 CMakeFiles/Dragon3D.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture" "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture" "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\cmake-build-debug" "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\cmake-build-debug" "C:\Users\berthelot Mickael\Desktop\opengl projets\Dragon3DTexture\cmake-build-debug\CMakeFiles\Dragon3D.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project" "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project" "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\cmake-build-debug" "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\cmake-build-debug" "C:\Users\berthelot Mickael\Desktop\opengl projets\opengl-math-project\cmake-build-debug\CMakeFiles\Dragon3D.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Dragon3D.dir/depend
 
