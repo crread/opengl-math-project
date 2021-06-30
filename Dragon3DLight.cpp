@@ -70,6 +70,7 @@ int main()
 
 //    bool ret = tinyobj::LoadObj(&attribs, &shapes, &materials, &warm, &err, "./../models/Cottage.obj", "", true, false);
     bool ret = tinyobj::LoadObj(&attribs, &shapes, &materials, &warm, &err, "./../models/suzanne.obj", nullptr, true, true);
+
     if (!warm.empty()) {
         std::cout<<warm<<std::endl;
     }
@@ -96,19 +97,17 @@ int main()
             for (int k = 0; k < fv; k++) {
                 tinyobj::index_t idx = shape.mesh.indices[index_offset + k];
 
-                listData.push_back(attribs.vertices[3*idx.vertex_index+0]);
+                listData.push_back(attribs.vertices[3 * idx.vertex_index+0]);
                 listData.push_back(attribs.vertices[3*idx.vertex_index+1]);
                 listData.push_back(attribs.vertices[3*idx.vertex_index+2]);
 
                 if (!attribs.normals.empty()) {
-//                    printf("normals");
                     listData.push_back(attribs.normals[3*idx.normal_index+0]);
                     listData.push_back(attribs.normals[3*idx.normal_index+1]);
                     listData.push_back(attribs.normals[3*idx.normal_index+2]);
                 }
 
                 if (!attribs.texcoords.empty()) {
-//                    printf("text coords");
                     listData.push_back(attribs.texcoords[2*idx.texcoord_index+0]);
                     listData.push_back(attribs.texcoords[2*idx.texcoord_index+1]);
                 }
@@ -150,15 +149,13 @@ int main()
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_CULL_FACE);
 
-        static const int stride = sizeof(float) * 8;
-
         const GLint POSITION = glGetAttribLocation( Dragon3DProgram, "a_position");
         glEnableVertexAttribArray(POSITION);
         glVertexAttribPointer(POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, &listData[0]);
 
         const GLint texAttrib = glGetAttribLocation(Dragon3DProgram,"a_texcoords");
         glEnableVertexAttribArray(texAttrib);
-        glVertexAttribPointer(texAttrib, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, &listData[2]);
+        glVertexAttribPointer(texAttrib, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, &listData[0]); //x,y,z
 
         glUseProgram(Dragon3DProgram);
 
@@ -221,11 +218,7 @@ int main()
                     "u_projectionMatrix"
         );
 
-        glUniformMatrix4fv(projectionLocation,
-                            1,
-                            GL_FALSE,
-                            projectionMatrix
-                            );
+        glUniformMatrix4fv(projectionLocation, 1, GL_FALSE, projectionMatrix);
 
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture);
