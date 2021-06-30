@@ -6,22 +6,29 @@
 #define OPENGL_PROJECT_QUATERNION_H
 
 
-class Quaternion {
+#include "./glm/glm.hpp"
+#include "./glm/vec3.hpp"
+#include "./glm/vec4.hpp"
+class Quaternion{
+
 public:
-    Quaternion();
-}
+    Quaternion (const  glm::vec3 &RotationAxis,
+                           const float &RotationAngle );
+    
+     void operator+(const Quaternion *quat);
+     void normalization();
+     Quaternion Conjugation();
+     Quaternion operator* (const Quaternion *rq) const;
+     glm::mat4 QuaterniontoMatrix();
+     float produitsqualaire(const glm::mat4 *mat);
+     Quaternion MatrixtoQuaternion(const glm::mat4 *src);
+     
+};
 
- void Quaternion::operator+(const Quaternion *quat);
- void Quaternion::normalization();
- Quaternion Quaternion::Conjugation();
- Quaternion Quaternion::operator* (const Quaternion *rq) const;
- glm::mat4 glm::mat4::QuaterniontoMatrix();
- float float::produitsqualaire(const glm::mat4 *mat);
- Quaternion MatrixtoQuaternion(const glm::mat4 *src);
- 
- void setY(float y);
 
-;
+
+
+
 
 
 #endif //OPENGL_PROJECT_QUATERNION_H

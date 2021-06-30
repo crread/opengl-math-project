@@ -5,21 +5,21 @@
 #include "../Headers/Quaternion.h"
 
 
-Quaternion::Quaternion(const std::vector<float> &RotationAxis,
+Quaternion::Quaternion (const  glm::vec3 &RotationAxis,
                        const float &RotationAngle ) {
                        
-x = RotationAxis.x * sin(RotationAngle / 2)
-y = RotationAxis.y * sin(RotationAngle / 2)
-z = RotationAxis.z * sin(RotationAngle / 2)
-w = cos(RotationAngle / 2)
+float x = RotationAxis->x * sin(RotationAngle / 2)
+float y = RotationAxis->y * sin(RotationAngle / 2)
+float z = RotationAxis->z * sin(RotationAngle / 2)
+float w = cos(RotationAngle / 2)
 };
 
 //Addition de Quaternion
 void Quaternion::operator+(const Quaternion *quat) {
-this.x+= quat.x;
-this.y+= quat.y;
-this.z+= quat.z;
-this.w+= quat.w;
+this.x+= quat->x;
+this.y+= quat->y;
+this.z+= quat->z;
+this.w+= quat->w;
 }
 
 void Quaternion::normalization() {          //normaliser
@@ -29,11 +29,11 @@ if (fabs(mag2 - 1.0f) > 0.00001f)  // fabs pour avoir valeur absolue , 0.00001f 
 { float mag = sqrt(mag2); //pour racine carré de mag2
 this.w /= mag; this.x /= mag; this.y /= mag; this.z /= mag; } }
 
-Quaternion Quaternion::Conjugation() {  //conjugaison
+Quaternion Conjugation() {  //conjugaison
  return Quaternion(-this.x, -this.y, -this.z, this.w); 
  }
  
- Quaternion Quaternion::operator* (const Quaternion *rq) const {  //Multiplication
+ Quaternion operator* (const Quaternion *rq) const {  //Multiplication
  return Quaternion(w * rq.x + x * rq.w + y * rq.z - z * rq.y, w * rq.y + y * rq.w + z * rq.x - x * rq.z, 
  w * rq.z + z * rq.w + x * rq.y - y * rq.x, w * rq.w - x * rq.x - y * rq.y - z * rq.z); }
  
@@ -51,7 +51,7 @@ Quaternion Quaternion::Conjugation() {  //conjugaison
  
 
  // Convert Quaternion to Matrix Matrix4 Quaternion::
- glm::mat4 glm::mat4::QuaterniontoMatrix(){
+ glm::mat4 QuaterniontoMatrix(){
  float x2 = x * x; 
  float y2 = y * y; 
  float z2 = z * z; 
@@ -65,7 +65,7 @@ Quaternion Quaternion::Conjugation() {  //conjugaison
  }
  
 //Produit squalaire
-float float::produitsqualaire(const glm::mat4 *mat) {
+float produitsqualaire(const glm::mat4 *mat) {
 Quaternion sq = MatrixtaQuaternion(mat); 
 return (this.x * sq.x + this.y * sq.y + this.z * sq.z + this.w * sq.w);
 }
