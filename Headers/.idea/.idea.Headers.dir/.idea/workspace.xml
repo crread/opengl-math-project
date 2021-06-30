@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97c73080-37cc-4c0a-b2d8-ba76759a21b1" name="Default Changelist" comment="" />
+    <list default="true" id="97c73080-37cc-4c0a-b2d8-ba76759a21b1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ObjLoader.h" beforeDir="false" afterPath="$PROJECT_DIR$/ObjLoader.h" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +11,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/ObjLoader.h" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1ufSNoCKI8Ij3jxcuZl5DtlEOj8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -31,13 +38,14 @@
       <option name="presentableId" value="Default" />
       <updated>1625055116614</updated>
       <workItem from="1625055130397" duration="212000" />
+      <workItem from="1625067634904" duration="24000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
