@@ -1,12 +1,13 @@
+#define TINYOBJLOADER_IMPLEMENTATION // define this in only *one* .cc
+#include "tiny_obj_loader.h"
+
 #include "glew/include/glew.h"
 #include "GLFW/include/glfw3.h"
+
 #include <cstdio>
 #include <cmath>
-#include "DragonData.h"
+#include <iostream>
 #include "./GLShader.h"
-
-#include "./Headers/Camera.h"
-#include "./Headers/ObjLoader.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "./stb-master/stb_image.h"
@@ -25,9 +26,9 @@ void Initialize(GLFWwindow* window)
         printf("Erreur OpenGL, code %d\n", error);
     }
 
-//    Dragon3DProgram = CreateShaderProgram(
-//                            "./../Dragon3DLight.vs.glsl",
-//                            "./../Dragon3DLight.fs.glsl");
+    Dragon3DProgram = CreateShaderProgram(
+                            "./../Dragon3DLight.vs.glsl",
+                            "./../Dragon3DLight.fs.glsl");
 
 }
 
@@ -44,20 +45,13 @@ int main()
         return -1;
 
     window = glfwCreateWindow(640, 480, "Dragon", nullptr, nullptr);
-
-    if (!window) {
+    if (!window)
+    {
         glfwTerminate();
         return -1;
     }
 
     glfwMakeContextCurrent(window);
-
-    int width, height;
-    glfwGetWindowSize(window, &width, &height);
-
-    Camera camera = Camera(std::vector<float> {0, 0, 0}, 70.0f, 0.1f, 1000.0f, (float)width, (float)height);
-    ObjLoader objLoader = ObjLoader("./../models/suzanne.obj");
-    objLoader.load_obj();
 
     GLenum glewError = glewInit();
     if (glewError != GLEW_NO_ERROR)
@@ -66,28 +60,88 @@ int main()
         return -1;
     }
 
+    std::string objPath = "./../models/Cottage.obj";
+    tinyobj::attrib_t attribs;
+    std::vector<tinyobj::shape_t> shapes;
+    std::vector<tinyobj::material_t> materials;
+
+    std::string warm;
+    std::string err;
+
+//    bool ret = tinyobj::LoadObj(&attribs, &shapes, &materials, &warm, &err, "./../models/Cottage.obj", "", true, false);
+    bool ret = tinyobj::LoadObj(&attribs, &shapes, &materials, &warm, &err, "./../models/suzanne.obj", nullptr, true, true);
+
+    if (!warm.empty()) {
+        std::cout<<warm<<std::endl;
+    }
+
+    if (!err.empty()) {
+        std::cout<<err<<std::endl;
+    }
+
+    if (!ret) {
+        exit(1);
+    }
+
+    std::vector<float> listData;
+
+    int index = 0;
+
+    for (auto & shape : shapes){
+
+        int index_offset = 0;
+
+        for (int j = 0; j < shape.mesh.num_face_vertices.size(); j++) {
+            int fv = shape.mesh.num_face_vertices[j];
+
+            for (int k = 0; k < fv; k++) {
+                tinyobj::index_t idx = shape.mesh.indices[index_offset + k];
+
+                listData.push_back(attribs.vertices[3 * idx.vertex_index+0]);
+                listData.push_back(attribs.vertices[3*idx.vertex_index+1]);
+                listData.push_back(attribs.vertices[3*idx.vertex_index+2]);
+
+                if (!attribs.normals.empty()) {
+                    listData.push_back(attribs.normals[3*idx.normal_index+0]);
+                    listData.push_back(attribs.normals[3*idx.normal_index+1]);
+                    listData.push_back(attribs.normals[3*idx.normal_index+2]);
+                }
+
+                if (!attribs.texcoords.empty()) {
+                    listData.push_back(attribs.texcoords[2*idx.texcoord_index+0]);
+                    listData.push_back(attribs.texcoords[2*idx.texcoord_index+1]);
+                }
+            }
+            index_offset += fv;
+            index += fv;
+        }
+    }
+
     Initialize(window);
 
-//    int h, w, nrChannels;
-//    uint8_t *data = stbi_load("./../Textures/grass_grass_0070_03.jpg", &w, &h, &nrChannels, STBI_rgb_alpha);
-//
-//    GLuint texture;
-//    glGenTextures(1, &texture);
-//    glBindTexture(GL_TEXTURE_2D, texture);
-//
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-//
-//    if (data) {
-//        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-//        glGenerateMipmap(GL_TEXTURE_2D);
-//        stbi_image_free(data);
-//    }
+    int h, w, nrChannels;
+    uint8_t *data = stbi_load("./../Textures/grass_grass_0070_03.jpg", &w, &h, &nrChannels, STBI_rgb_alpha);
+
+    GLuint texture;
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+    if (data) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+        stbi_image_free(data);
+    }
 
     while (!glfwWindowShouldClose(window))
     {
+        int width, height;
+        glfwGetWindowSize(window, &width, &height);
+
         glViewport(0, 0, width, height);
 
         glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
@@ -95,127 +149,84 @@ int main()
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_CULL_FACE);
 
+        const GLint POSITION = glGetAttribLocation( Dragon3DProgram, "a_position");
+        glEnableVertexAttribArray(POSITION);
+        glVertexAttribPointer(POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, &listData[0]);
 
+        const GLint texAttrib = glGetAttribLocation(Dragon3DProgram,"a_texcoords");
+        glEnableVertexAttribArray(texAttrib);
+        glVertexAttribPointer(texAttrib, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, &listData[0]); //x,y,z
 
-//        static const int stride = sizeof(float) * 8;
-//
-//        const int POSITION = glGetAttribLocation(
-//                            Dragon3DProgram,
-//                            "a_position");
-//        glEnableVertexAttribArray(POSITION);
-//        glVertexAttribPointer(POSITION, 3, GL_FLOAT
-//                , false, stride, &DragonVertices[0]);
-//
-//        const int NORMAL = glGetAttribLocation(
-//                            Dragon3DProgram,
-//                            "a_normal");
-//        glEnableVertexAttribArray(NORMAL);
-//        glVertexAttribPointer(NORMAL, 3, GL_FLOAT
-//                        , false, stride, &DragonVertices[3]);
-//
-//        const GLint texAttrib = glGetAttribLocation(Dragon3DProgram,"a_texcoords");
-//        glEnableVertexAttribArray(texAttrib);
-//        glVertexAttribPointer(texAttrib, 2, GL_FLOAT, GL_FALSE, stride, &DragonVertices[6]);
+        glUseProgram(Dragon3DProgram);
 
-        glEnableVertexAttribArray(attribute_v_coord);
-        // Describe our vertices array to OpenGL (it can't guess its format automatically)
-        glBindBuffer(GL_ARRAY_BUFFER, vbo_mesh_vertices);
-        glVertexAttribPointer(
-                attribute_v_coord,  // attribute
-                4,                  // number of elements per vertex, here (x,y,z,w)
-                GL_FLOAT,           // the type of each element
-                GL_FALSE,           // take our values as-is
-                0,                  // no extra data between each position
-                0                   // offset of first element
+        float time = glfwGetTime();
+        const int timeLocation = glGetUniformLocation(Dragon3DProgram, "u_time");
+        glUniform1f(timeLocation, time);
+
+        float rotationMatrix[] = {
+            cosf(time), 0.f, -sinf(time), 0.0f,
+            0.0f, 1.0f, 0.0f, 0.f,
+            sinf(time), 0.f, cosf(time), 0.0f,
+            0.0f, 0.0f, 0.0f, 1.0f
+        };
+
+        const int rotationLocation = glGetUniformLocation(
+                    Dragon3DProgram,
+                    "u_rotationMatrix"
         );
 
-        glEnableVertexAttribArray(attribute_v_normal);
-        glBindBuffer(GL_ARRAY_BUFFER, vbo_mesh_normals);
-        glVertexAttribPointer(
-                attribute_v_normal, // attribute
-                3,                  // number of elements per vertex, here (x,y,z)
-                GL_FLOAT,           // the type of each element
-                GL_FALSE,           // take our values as-is
-                0,                  // no extra data between each position
-                0                   // offset of first element
+        glUniformMatrix4fv(rotationLocation,
+                            1,
+                            GL_TRUE,
+                            rotationMatrix
+                            );
+
+        float translationMatrix[] = {
+            1.0f, 0.0f, 0.0f, 0.0f,
+            0.0f, 1.0f, 0.0f, 0.0f,
+            0.0f, 0.0f, 1.0f, 0.0f,
+            cosf(time), 0.0f, -20.0f, 1.0f
+        };
+
+        const int translationLocation = glGetUniformLocation(
+                    Dragon3DProgram,
+                    "u_translationMatrix"
         );
 
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo_mesh_elements);
+        glUniformMatrix4fv(translationLocation,
+                            1,
+                            GL_FALSE,
+                            translationMatrix
+                            );
 
-//        glUseProgram(Dragon3DProgram);
-//
-//        float time = glfwGetTime();
-//        const int timeLocation = glGetUniformLocation(
-//                    Dragon3DProgram,
-//                    "u_time");
-//        glUniform1f(timeLocation, time);
-//
-//        float rotationMatrix[] = {
-//            cosf(time), 0.f, -sinf(time), 0.0f,
-//            0.0f, 1.0f, 0.0f, 0.f,
-//            sinf(time), 0.f, cosf(time), 0.0f,
-//            0.0f, 0.0f, 0.0f, 1.0f
-//        };
-//
-//        const int rotationLocation = glGetUniformLocation(
-//                    Dragon3DProgram,
-//                    "u_rotationMatrix"
-//        );
-//
-//        glUniformMatrix4fv(rotationLocation,
-//                            1,
-//                            GL_TRUE,
-//                            rotationMatrix
-//                            );
-//
-//        float translationMatrix[] = {
-//            1.0f, 0.0f, 0.0f, 0.0f,
-//            0.0f, 1.0f, 0.0f, 0.0f,
-//            0.0f, 0.0f, 1.0f, 0.0f,
-//            cosf(time), 0.0f, -20.0f, 1.0f
-//        };
-//
-//        const int translationLocation = glGetUniformLocation(
-//                    Dragon3DProgram,
-//                    "u_translationMatrix"
-//        );
-//
-//        glUniformMatrix4fv(translationLocation,
-//                            1,
-//                            GL_FALSE,
-//                            translationMatrix
-//                            );
-//
-//        float projectionMatrix[] = {
-//                camera.getCot()/camera.getAspect(), 0.0f, 0.0f, 0.0f,
-//                0.0f, camera.getCot(), 0.0f, 0.0f,
-//                0.0f, 0.0f, -(camera.getZNear()+camera.getZFar())/(camera.getZFar()-camera.getZNear()), -1.0f,
-//                0.0f, 0.0f, -(2.0f*camera.getZNear()*camera.getZFar())/(camera.getZFar()-camera.getZNear()), 0.0f
-//        };
-//
-//        const int projectionLocation = glGetUniformLocation(
-//                    Dragon3DProgram,
-//                    "u_projectionMatrix"
-//        );
-//
-//        glUniformMatrix4fv(projectionLocation,
-//                            1,
-//                            GL_FALSE,
-//                            projectionMatrix
-//                            );
-//
-//        glActiveTexture(GL_TEXTURE0);
-//        glBindTexture(GL_TEXTURE_2D, texture);
-//
-        int size;
-        glGetBufferParameteriv(GL_ELEMENT_ARRAY_BUFFER, GL_BUFFER_SIZE, &size);
+        // fov=45°, aspect-ratio=width/height, znear=0.1, zfar=1000.0
+        float fov = 30.0f;
+        float radianFov = fov * (float)(M_PI / 180.0);
+        float aspect = (float)width / (float)height;
+        float znear = 0.1f, zfar = 500.0f;
+        float cot = 1.0f / tanf(radianFov / 2.0f);
 
-        glDrawElements(GL_TRIANGLES,
-                    sizeof(DragonIndices) / sizeof(short)
-                                , GL_UNSIGNED_SHORT,
-                                DragonIndices);
+        float projectionMatrix[] = {
+            cot/aspect, 0.0f, 0.0f, 0.0f,
+            0.0f, cot, 0.0f, 0.0f,
+            0.0f, 0.0f, -(znear+zfar)/(zfar-znear), -1.0f,
+            0.0f, 0.0f, -(2.0f*znear*zfar)/(zfar-znear), 0.0f
+        };
+
+        const int projectionLocation = glGetUniformLocation(
+                    Dragon3DProgram,
+                    "u_projectionMatrix"
+        );
+
+        glUniformMatrix4fv(projectionLocation, 1, GL_FALSE, projectionMatrix);
+
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texture);
+
+        glDrawArrays(GL_TRIANGLES, listData[0], index);
 
         glfwSwapBuffers(window);
+
         glfwPollEvents();
     }
 

@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = @CMakeFiles/Dragon3D.dir/includes_CXX.rsp
+CXX_INCLUDES = @CMakeFiles/test_opengl.dir/includes_CXX.rsp
 

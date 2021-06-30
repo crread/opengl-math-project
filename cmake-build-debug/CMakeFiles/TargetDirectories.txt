@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/cmake-build-debug/CMakeFiles/Dragon3D.dir
 C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+=======
+C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/cmake-build-debug/CMakeFiles/test_opengl.dir
+C:/Users/berthelot Mickael/Desktop/opengl projets/opengl-math-project/cmake-build-debug/CMakeFiles/edit_cache.dir
+>>>>>>> master
