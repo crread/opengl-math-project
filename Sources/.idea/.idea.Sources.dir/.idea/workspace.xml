@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e484a0be-680f-457a-9434-bae405a6a801" name="Default Changelist" comment="" />
+    <list default="true" id="e484a0be-680f-457a-9434-bae405a6a801" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Headers/Quaternion.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Headers/Quaternion.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sources.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sources.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quaternion.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Quaternion.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +13,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -26,6 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -37,6 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1624884166858</updated>
       <workItem from="1624884173725" duration="48000" />
+      <workItem from="1625413909995" duration="6070000" />
     </task>
     <servers />
   </component>
