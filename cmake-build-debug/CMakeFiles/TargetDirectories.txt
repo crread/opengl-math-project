@@ -1,0 +1,3 @@
+C:/Users/quent/Documents/GitHub/opengl-math-project/cmake-build-debug/CMakeFiles/Dragon3DLight.dir
+C:/Users/quent/Documents/GitHub/opengl-math-project/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/quent/Documents/GitHub/opengl-math-project/cmake-build-debug/CMakeFiles/rebuild_cache.dir

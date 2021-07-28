@@ -16,8 +16,8 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Sources/Quaternion.cpp" />
       <option value="$PROJECT_DIR$/Sources/Main.cpp" />
-      <option value="$PROJECT_DIR$/Headers/Quaternion.h" />
       <option value="$PROJECT_DIR$/Dragon3DLight.cpp" />
+      <option value="$PROJECT_DIR$/Headers/Quaternion.h" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vwIHhJtI0Xal31QE6Ygb7kclNd" />

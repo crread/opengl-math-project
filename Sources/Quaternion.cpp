@@ -36,13 +36,13 @@ void Quaternion::normalization() {          //normaliser
     { float mag = sqrt(mag2); //pour racine carré de mag2
         this->w /= mag; this->x /= mag; this->y /= mag; this->z /= mag; } }
 
-Quaternion Quaternion::Conjugation() {  //conjugaison
+void Quaternion::Conjugation() {  //conjugaison
     x = -this->x;
     y = -this->y;
     z = -this->z;
 }
 
-Quaternion Quaternion::operator* (Quaternion *rq) {   //Multiplication
+void Quaternion::operator* (Quaternion *rq) {   //Multiplication
     x = w * rq->x + x * rq->w + y * rq->z - z * rq->y;
     y = w * rq->y + y * rq->w + z * rq->x - x * rq->z;
     z = w * rq->z + z * rq->w + x * rq->y - y * rq->x;

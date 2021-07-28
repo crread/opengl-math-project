@@ -1,0 +1,1 @@
+  -LC:/Users/quent/Documents/GitHub/opengl-math-project/GLFW/lib  -LC:/Users/quent/Documents/GitHub/opengl-math-project/glew/lib  -lopengl32 -lglew32 -lglfw3 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
