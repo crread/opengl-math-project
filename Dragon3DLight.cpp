@@ -9,8 +9,8 @@
 #include <iostream>
 #include "./GLShader.h"
 #include "./Sources/Quaternion.cpp"
-#include "./glm/glm.hpp"
-#include "./glm/gtc/type_ptr.hpp"
+#include "./headers/glm/glm.hpp"
+#include "./headers/glm/gtc/type_ptr.hpp"
 #define STB_IMAGE_IMPLEMENTATION
 #include "./stb-master/stb_image.h"
 
@@ -236,7 +236,7 @@ int main()
                             GL_TRUE,
 //                           rotationMatrix
 //QUaternion en matrice et matrice en glfloat
-                           glm::value_ptr(q.QuaterniontoMatrix());
+                           glm::value_ptr(q.QuaterniontoMatrix())
                             );
 
         float translationMatrix[] = {
