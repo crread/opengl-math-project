@@ -15,6 +15,7 @@ public:
     Quaternion();
 
     void operator+(const Quaternion quat);
+    //void rotation(glm::mat4 mat);
     void normalization();
     void rotation(const glm::mat4 &rotationMatrix);
     Quaternion Conjugation();

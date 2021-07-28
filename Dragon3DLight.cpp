@@ -8,6 +8,7 @@
 #include <cmath>
 #include <iostream>
 #include "./GLShader.h"
+#include "./Sources/Quaternion.cpp"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "./stb-master/stb_image.h"
@@ -186,6 +187,7 @@ int main()
     addCube(3, &listData, index);
     addCube(-3, &listData, index);
 
+    Quaternion q = Quaternion(); //QUaternion created
     while (!glfwWindowShouldClose(window))
     {
         int width, height;
@@ -215,6 +217,7 @@ int main()
         glUniform1f(timeLocation, time);
 
         float rotationMatrix[] = {
+                //la mat 4 a balancer
             cosf(time), 0.f, -sinf(time), 0.0f,
             0.0f, 1.0f, 0.0f, 0.f,
             sinf(time), 0.f, cosf(time), 0.0f,
@@ -224,12 +227,15 @@ int main()
         const int rotationLocation = glGetUniformLocation(
                     Dragon3DProgram,
                     "u_rotationMatrix"
+
         );
 
         glUniformMatrix4fv(rotationLocation,
                             1,
                             GL_TRUE,
-                           rotationMatrix
+//                           rotationMatrix
+//QUaternion en matrice et matrice en glfloat
+                            q.QuaterniontoMatrix()
                             );
 
         float translationMatrix[] = {

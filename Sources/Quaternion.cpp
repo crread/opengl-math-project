@@ -4,16 +4,32 @@
 
 #include "../Headers/Quaternion.h"
 
-Quaternion::Quaternion () {};
+Quaternion::Quaternion (
+
+        float x;
+        float y;
+        float z;
+        float w;
+        //Matrix 4
+//Matrix to quaternion
+//Quaternion to Matrix dans  glUniformMatrix4fv
+ ) {};
+
 
 //Addition de Quaternion
 void Quaternion::operator+(const Quaternion quat)
 {
-    this->x+= quat.x;
-    this->y+= quat.y;
-    this->z+= quat.z;
-    this->w+= quat.w;
+//    this->x+= quat.x;
+//    this->y+= quat.y;
+//    this->z+= quat.z;
+//    this->w+= quat.w;
 }
+
+//void Quaternion::rotation(glm::mat4 mat)
+//{
+//    Quaternion q = MatrixtoQuaternion(mat);
+//    this + q;
+//}
 
 void Quaternion::normalization() {          //normaliser
 // Don't normalize if we don't have to
