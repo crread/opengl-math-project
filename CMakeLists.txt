@@ -5,8 +5,9 @@ set(CMAKE_CXX_STANDARD 14)
 set(SOURCE_FILES Dragon3DLight.cpp)
 
 include_directories(${PROJECT_SOURCE_DIR}/GLFW/include ${PROJECT_SOURCE_DIR}/glew/include)
-
 link_directories(${PROJECT_SOURCE_DIR}/GLFW/lib ${PROJECT_SOURCE_DIR}/glew/lib)
+
+include_directories("${PROJECT_SOURCE_DIR}/Headers" "${PROJECT_SOURCE_DIR}/Sources")
 
 add_executable(Dragon3DLight ${SOURCE_FILES})
 

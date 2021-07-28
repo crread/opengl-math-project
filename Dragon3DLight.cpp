@@ -229,7 +229,7 @@ int main()
         glUniformMatrix4fv(rotationLocation,
                             1,
                             GL_TRUE,
-                            rotationMatrix
+                           rotationMatrix
                             );
 
         float translationMatrix[] = {
