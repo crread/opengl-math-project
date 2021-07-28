@@ -4,16 +4,16 @@
 
 #include "../Headers/Quaternion.h"
 
-Quaternion::Quaternion (
+Quaternion::Quaternion () {
 
-        float x;
-        float y;
-        float z;
-        float w;
-        //Matrix 4
+    float x;
+    float y;
+    float z;
+    float w;
+    //Matrix 4
 //Matrix to quaternion
 //Quaternion to Matrix dans  glUniformMatrix4fv
- ) {};
+};
 
 
 //Addition de Quaternion
