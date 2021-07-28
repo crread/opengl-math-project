@@ -8,6 +8,6 @@ include_directories(${PROJECT_SOURCE_DIR}/GLFW/include ${PROJECT_SOURCE_DIR}/gle
 
 link_directories(${PROJECT_SOURCE_DIR}/GLFW/lib ${PROJECT_SOURCE_DIR}/glew/lib)
 
-add_executable(test_opengl ${SOURCE_FILES})
+add_executable(Dragon3DLight ${SOURCE_FILES})
 
-target_link_libraries(test_opengl opengl32 glew32 glfw3)
+target_link_libraries(Dragon3DLight opengl32 glew32 glfw3)

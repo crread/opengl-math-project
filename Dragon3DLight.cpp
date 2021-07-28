@@ -37,6 +37,51 @@ void Terminate()
     DestroyProgram(Dragon3DProgram);
 }
 
+void addCube(const int coef, std::vector<float> *listData, int &index)
+{
+     const GLfloat g_vertex_buffer_data[] = {
+            coef + -1.0f, coef + -1.0f, coef -1.0f,
+            coef + -1.0f, coef + -1.0f, coef + 1.0f,
+            coef + -1.0f, coef + 1.0f, coef + 1.0f,
+            coef + 1.0f, coef + 1.0f, coef + -1.0f,
+            coef + -1.0f, coef + -1.0f,coef + -1.0f,
+            coef + -1.0f, coef + 1.0f,coef + -1.0f,
+            coef + 1.0f, coef + -1.0f, coef + 1.0f,
+            coef + -1.0f, coef + -1.0f, coef + -1.0f,
+            coef + 1.0f, coef + -1.0f, coef + -1.0f,
+            coef + 1.0f, coef + 1.0f, coef + -1.0f,
+            coef + 1.0f, coef + -1.0f, coef + -1.0f,
+            coef + -1.0f, coef + -1.0f, coef + -1.0f,
+            coef + -1.0f, coef + -1.0f, coef + -1.0f,
+            coef + -1.0f, coef + 1.0f, coef + 1.0f,
+            coef + -1.0f, coef + 1.0f, coef + -1.0f,
+            coef + 1.0f, coef + -1.0f, coef + 1.0f,
+            coef + -1.0f, coef + -1.0f, coef + 1.0f,
+            coef + -1.0f, coef + -1.0f, coef + -1.0f,
+            coef + -1.0f, coef + 1.0f, coef + 1.0f,
+            coef + -1.0f, coef + -1.0f, coef + 1.0f,
+            coef + 1.0f, coef + -1.0f, coef + 1.0f,
+            coef + 1.0f, coef + 1.0f, coef + 1.0f,
+            coef + 1.0f, coef + -1.0f, coef + -1.0f,
+            coef + 1.0f, coef + 1.0f, coef + -1.0f,
+            coef + 1.0f, coef + -1.0f, coef + -1.0f,
+            coef + 1.0f, coef + 1.0f, coef + 1.0f,
+            coef + 1.0f, coef + -1.0f, coef + 1.0f,
+            coef + 1.0f, coef + 1.0f, coef + 1.0f,
+            coef + 1.0f, coef + 1.0f, coef + -1.0f,
+            coef + -1.0f, coef + 1.0f, coef + -1.0f,
+            coef + 1.0f, coef + 1.0f, coef + 1.0f,
+            coef + -1.0f, coef + 1.0f, coef + -1.0f,
+            coef + -1.0f, coef + 1.0f, coef + 1.0f,
+            coef + 1.0f, coef + 1.0f, coef + 1.0f,
+            coef + -1.0f, coef + 1.0f, coef + 1.0f,
+            coef + 1.0f, coef + -1.0f, coef + 1.0f
+    };
+
+    listData->insert(listData->end(), std::begin(g_vertex_buffer_data), std::end(g_vertex_buffer_data));
+    index += 12 * 3;
+}
+
 int main()
 {
     GLFWwindow* window;
@@ -44,7 +89,10 @@ int main()
     if (!glfwInit())
         return -1;
 
+    glfwWindowHint(GLFW_SAMPLES, 10);
+
     window = glfwCreateWindow(640, 480, "Dragon", nullptr, nullptr);
+
     if (!window)
     {
         glfwTerminate();
@@ -60,7 +108,6 @@ int main()
         return -1;
     }
 
-    std::string objPath = "./../models/Cottage.obj";
     tinyobj::attrib_t attribs;
     std::vector<tinyobj::shape_t> shapes;
     std::vector<tinyobj::material_t> materials;
@@ -68,7 +115,6 @@ int main()
     std::string warm;
     std::string err;
 
-//    bool ret = tinyobj::LoadObj(&attribs, &shapes, &materials, &warm, &err, "./../models/Cottage.obj", "", true, false);
     bool ret = tinyobj::LoadObj(&attribs, &shapes, &materials, &warm, &err, "./../models/suzanne.obj", nullptr, true, true);
 
     if (!warm.empty()) {
@@ -137,6 +183,9 @@ int main()
         stbi_image_free(data);
     }
 
+    addCube(3, &listData, index);
+    addCube(-3, &listData, index);
+
     while (!glfwWindowShouldClose(window))
     {
         int width, height;
@@ -148,6 +197,8 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_CULL_FACE);
+        glEnable(GL_MULTISAMPLE);
+        glDepthFunc(GL_LESS);
 
         const GLint POSITION = glGetAttribLocation( Dragon3DProgram, "a_position");
         glEnableVertexAttribArray(POSITION);
@@ -155,7 +206,7 @@ int main()
 
         const GLint texAttrib = glGetAttribLocation(Dragon3DProgram,"a_texcoords");
         glEnableVertexAttribArray(texAttrib);
-        glVertexAttribPointer(texAttrib, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, &listData[0]); //x,y,z
+        glVertexAttribPointer(texAttrib, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, &listData[0]);
 
         glUseProgram(Dragon3DProgram);
 
@@ -199,7 +250,6 @@ int main()
                             translationMatrix
                             );
 
-        // fov=45°, aspect-ratio=width/height, znear=0.1, zfar=1000.0
         float fov = 30.0f;
         float radianFov = fov * (float)(M_PI / 180.0);
         float aspect = (float)width / (float)height;
