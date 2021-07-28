@@ -188,7 +188,7 @@ int main()
     addCube(3, &listData, index);
     addCube(-3, &listData, index);
 
-    Quaternion q = Quaternion(); //QUaternion created
+    Quaternion q = Quaternion();
     while (!glfwWindowShouldClose(window))
     {
         int width, height;
@@ -230,6 +230,13 @@ int main()
                     "u_rotationMatrix"
 
         );
+
+        glm::mat4 mat = {  cosf(time), 0.f, -sinf(time), 0.0f,
+                              0.0f, 1.0f, 0.0f, 0.f,
+                              sinf(time), 0.f, cosf(time), 0.0f,
+                              0.0f, 0.0f, 0.0f, 1.0f};
+
+        q = q.MatrixtoQuaternion(mat);
 
         glUniformMatrix4fv(rotationLocation,
                             1,

@@ -10,9 +10,7 @@ Quaternion::Quaternion () {
     float y;
     float z;
     float w;
-    //Matrix 4
-//Matrix to quaternion
-//Quaternion to Matrix dans  glUniformMatrix4fv
+
 };
 
 
