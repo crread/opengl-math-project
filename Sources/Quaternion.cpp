@@ -72,12 +72,12 @@ Quaternion Quaternion::Conjugation() {  //conjugaison
  
 //Produit squalaire
 float Quaternion::produitsqualaire(const glm::mat4 &mat) {
-Quaternion sq = MatrixtoQuaternion(mat); 
+Quaternion sq = this->MatrixtoQuaternion(mat); 
 return (this->x * sq.x + this->y * sq.y + this->z * sq.z + this->w * sq.w);
 }
 
 //Matrix to a Quaternion
-Quaternion MatrixtoQuaternion(const glm::mat4 &src){    const float trace = 1.0f + src[0][0] + src[1][1] + src[3][3];
+Quaternion Quaternion::MatrixtoQuaternion(const glm::mat4 &src){    const float trace = 1.0f + src[0][0] + src[1][1] + src[3][3];
 if (trace > 0.00001f)    {
     const float s = sqrt(trace) * 2;
       Quaternion qt = Quaternion(glm::vec3(0,0,0),0.0f);
