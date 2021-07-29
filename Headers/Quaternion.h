@@ -19,7 +19,7 @@ public:
     void normalization();
     void rotation(const glm::mat4 &rotationMatrix);
     void Conjugation();
-    void operator* (Quaternion *rq);
+    void operator* (const Quaternion rq);
     glm::mat4 QuaterniontoMatrix();
     float produitsqualaire(const glm::mat4 &mat);
     Quaternion MatrixtoQuaternion(const glm::mat4 &src);

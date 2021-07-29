@@ -17,16 +17,16 @@ Quaternion::Quaternion () {
 //Addition de Quaternion
 void Quaternion::operator+(const Quaternion quat)
 {
-//    this->x+= quat.x;
-//    this->y+= quat.y;
-//    this->z+= quat.z;
-//    this->w+= quat.w;
+x+= quat.x;
+y+= quat.y;
+z+= quat.z;
+w+= quat.w;
 }
 
 //void Quaternion::rotation(glm::mat4 mat)
 //{
 //    Quaternion q = MatrixtoQuaternion(mat);
-//    this + q;
+//   this.Quaternion + q;
 //}
 
 void Quaternion::normalization() {          //normaliser
@@ -42,11 +42,11 @@ void Quaternion::Conjugation() {  //conjugaison
     z = -this->z;
 }
 
-void Quaternion::operator* (Quaternion *rq) {   //Multiplication
-    x = w * rq->x + x * rq->w + y * rq->z - z * rq->y;
-    y = w * rq->y + y * rq->w + z * rq->x - x * rq->z;
-    z = w * rq->z + z * rq->w + x * rq->y - y * rq->x;
-    w = w * rq->w - x * rq->x - y * rq->y - z * rq->z;
+void Quaternion::operator* (const Quaternion rq) {   //Multiplication
+    x = w * rq.x + x * rq.w + y * rq.z - z * rq.y;
+    y = w * rq.y + y * rq.w + z * rq.x - x * rq.z;
+    z = w * rq.z + z * rq.w + x * rq.y - y * rq.x;
+    w = w * rq.w - x * rq.x - y * rq.y - z * rq.z;
 }
 
 glm::mat4 Quaternion::QuaterniontoMatrix(){

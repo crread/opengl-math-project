@@ -188,7 +188,13 @@ int main()
     addCube(3, &listData, index);
     addCube(-3, &listData, index);
 
+    //Quaternion declaration
     Quaternion q = Quaternion();
+
+
+    //--------------------------------
+
+
     while (!glfwWindowShouldClose(window))
     {
         int width, height;
@@ -230,18 +236,44 @@ int main()
                     "u_rotationMatrix"
 
         );
-
+        //Mat déclaration
         glm::mat4 mat = {  cosf(time), 0.f, -sinf(time), 0.0f,
                               0.0f, 1.0f, 0.0f, 0.f,
                               sinf(time), 0.f, cosf(time), 0.0f,
                               0.0f, 0.0f, 0.0f, 1.0f};
 
+        glm::mat4 mat2 = {  cosf(time), 8.f, -sinf(time), 5.5f,
+                           8.0f, 1.0f, 8.0f, 8.f,
+                           sinf(time), 8.f, cosf(time), 8.2f,
+                           4.9f, 8.0f, 8.0f, 8.0f};
+
+
+        glm::mat4 mat3 = {  cosf(time), 0.f, -sinf(time), 0.0f,
+                           0.0f, 0.05f, 0.0f, 0.f,
+                           sinf(time), 0.f, cosf(time), 0.0f,
+                           0.0f, 0.0f, 0.0f, 0.05f};
+        //-----------------------------------------
         q = q.MatrixtoQuaternion(mat);
 
+        //Déclaration de q2
+        Quaternion q2 = Quaternion();
+        q2 = q2.MatrixtoQuaternion(mat2);
+        Quaternion q3 = Quaternion();
+        q3 = q3.MatrixtoQuaternion(mat3);
+
+        //Addition de quaternion
+        //q+q2;
+
+        //Multiplication de quaternion
+        //q*q2;
+        //q*q3;
+
+        //Let's set rotation !!!
         glUniformMatrix4fv(rotationLocation,
                             1,
                             GL_TRUE,
 //                           rotationMatrix
+
 //QUaternion en matrice et matrice en glfloat
                            glm::value_ptr(q.QuaterniontoMatrix())
                             );
